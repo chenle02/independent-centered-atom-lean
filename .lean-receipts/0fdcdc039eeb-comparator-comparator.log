@@ -1,0 +1,42 @@
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+No files to download
+Already decompressed 9031 file(s)
+lean-path-shadow: none (11 entries, roots ProbabilityCore,ProbabilityCoreChallenge)
+== lake comparator (toolchain) comparator.json
+Resolving dependencies
+Building ProbabilityCore.Challenge
+⚠ [3033/3033] Replayed ProbabilityCore.Challenge
+warning: ProbabilityCore/Challenge.lean: imports `Mathlib.Probability.ConditionalExpectation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ProbabilityCore/Challenge.lean: imports `Mathlib.Probability.Independence.Integration` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ProbabilityCore/Challenge.lean: imports `Mathlib.MeasureTheory.Function.ConditionalExpectation.PullOut` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ProbabilityCore/Challenge.lean: imports `Mathlib.MeasureTheory.Function.L2Space` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ProbabilityCore/Challenge.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ProbabilityCore/Challenge.lean:20:8: declaration uses `sorry`
+Build completed successfully (3033 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, ProbabilityCore.IndependentCenteredAtom.bounded_mul_independent_centered, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ProbabilityCore.Challenge
+Building ProbabilityCore.IndependentCenteredAtom
+⚠ [3033/3033] Replayed ProbabilityCore.IndependentCenteredAtom
+warning: ProbabilityCore/IndependentCenteredAtom.lean: imports `Mathlib.Probability.ConditionalExpectation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ProbabilityCore/IndependentCenteredAtom.lean: imports `Mathlib.Probability.Independence.Integration` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ProbabilityCore/IndependentCenteredAtom.lean: imports `Mathlib.MeasureTheory.Function.ConditionalExpectation.PullOut` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ProbabilityCore/IndependentCenteredAtom.lean: imports `Mathlib.MeasureTheory.Function.L2Space` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ProbabilityCore/IndependentCenteredAtom.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ProbabilityCore/IndependentCenteredAtom.lean:53:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Build completed successfully (3033 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, ProbabilityCore.IndependentCenteredAtom.bounded_mul_independent_centered, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ProbabilityCore.IndependentCenteredAtom
+Running con-ron kernel on solution
+con-ron: accepted 34981 declarations (--verified)
+con-ron kernel accepts the solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution
+Lean default kernel accepts the solution
+Your solution is okay!

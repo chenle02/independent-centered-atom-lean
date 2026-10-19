@@ -1,0 +1,33 @@
+{
+  "commit": "0fdcdc039eebe632581e1d92cb6068d989cbc9a0",
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_rev": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "sorry_count": 0,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "report_sha256": "3989f1e87d9a59c3f7aadc0330fc9f672e14b35166c19833311c0623d529591b",
+  "job_id": "systemd-user:independent-centered-atom-lower001.service:17ad8834031e464eb7e50bb963f1c6c4@h-24e00fc5da6c",
+  "checker": "verify.sh (lake build ProbabilityCore.IndependentCenteredAtom ProbabilityCore.Axioms; #print axioms)",
+  "generated_at": "2026-10-19T14:05:37Z",
+  "job_stdout_sha256": "753443cdbc4f3358a2058f45773f69e40c4a2a43b3a6b1a41bb3df154898e02c",
+  "manifest_sha256": "62ae9ff5d402bd11322dda656beab0695f56793ae4814740f7568799175346c8",
+  "log_commit_bound": true,
+  "claim_axioms": {
+    "checked": 1,
+    "nonstandard": [],
+    "missing": []
+  },
+  "producer": {
+    "lean_pkg": "0.18.0",
+    "install": "installed",
+    "commit": null,
+    "dirty": null,
+    "sources_sha256": "d93c083879d622a5e8f418e63973ac9538ab7f196a9b3cb6d80368c618eb8b85",
+    "source_files": 73,
+    "python": "3.12.3"
+  },
+  "unit_properties_sha256": "0efb3c0d7acef87275cc48cad7eb511dc92a066ab8a8d695a19b357fd67b5d6d"
+}

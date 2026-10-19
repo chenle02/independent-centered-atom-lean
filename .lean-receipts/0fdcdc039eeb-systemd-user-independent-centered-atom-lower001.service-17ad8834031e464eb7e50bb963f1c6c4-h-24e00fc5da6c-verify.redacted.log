@@ -1,0 +1,29 @@
+commit: 0fdcdc039eebe632581e1d92cb6068d989cbc9a0
+lean-toolchain: leanprover/lean4:v4.35.0
+checker: verify.sh (lake build ProbabilityCore.IndependentCenteredAtom ProbabilityCore.Axioms; #print axioms)
+lean-pkg-build: begin
+⚠ [3033/3034] Built ProbabilityCore.IndependentCenteredAtom (2.5s)
+warning: ProbabilityCore/IndependentCenteredAtom.lean: imports `Mathlib.Probability.ConditionalExpectation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ProbabilityCore/IndependentCenteredAtom.lean: imports `Mathlib.Probability.Independence.Integration` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ProbabilityCore/IndependentCenteredAtom.lean: imports `Mathlib.MeasureTheory.Function.ConditionalExpectation.PullOut` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ProbabilityCore/IndependentCenteredAtom.lean: imports `Mathlib.MeasureTheory.Function.L2Space` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ProbabilityCore/IndependentCenteredAtom.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: ProbabilityCore/IndependentCenteredAtom.lean:53:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+ℹ [3034/3034] Built ProbabilityCore.Axioms (1.8s)
+info: ProbabilityCore/Axioms.lean:2:0: 'ProbabilityCore.IndependentCenteredAtom.bounded_mul_independent_centered' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Build completed successfully (3034 jobs).
+lean-pkg-build: end
+claim-axioms: ProbabilityCore.IndependentCenteredAtom.bounded_mul_independent_centered Classical.choice,Quot.sound,propext
+claim-axioms-done: 1
+sorry-count: 0
+axioms: Classical.choice,Quot.sound,propext
+generated-at: 2026-10-19T14:05:37Z

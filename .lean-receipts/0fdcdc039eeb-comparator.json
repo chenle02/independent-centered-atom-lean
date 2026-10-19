@@ -1,0 +1,95 @@
+{
+  "build_provenance": {
+    "cache_reused": 2,
+    "compiled": false,
+    "modules_built": 0,
+    "prebuilt": true,
+    "source": null
+  },
+  "commit": "0fdcdc039eebe632581e1d92cb6068d989cbc9a0",
+  "configs": [
+    {
+      "challenge_module": "ProbabilityCore.Challenge",
+      "definition_names": [],
+      "log": ".lean-receipts/0fdcdc039eeb-comparator-comparator.log",
+      "log_sha256": "118673453958da3a0fcf9021fb30fe3c18eebdb76572bf16fd1d3f922a3335fa",
+      "path": "comparator.json",
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "result": "pass",
+      "sha256": "3d5f271d72b97275ce14785455dc5b956fa7819676d7c4df68c5894fcef24598",
+      "solution_module": "ProbabilityCore.IndependentCenteredAtom",
+      "theorem_names": [
+        "ProbabilityCore.IndependentCenteredAtom.bounded_mul_independent_centered"
+      ]
+    }
+  ],
+  "generated_at": "2026-10-19T14:04:29+00:00",
+  "host": "h-24e00fc5da6c",
+  "host_label": "h-24e00fc5da6c",
+  "host_policy": "host h-24e00fc5da6c listed in COMPARATOR_RECEIPT_ALLOWED_HOSTS",
+  "job_id": "local-h-24e00fc5da6c-3201387-20261019T140429Z",
+  "judges": 1,
+  "lean_threads": 3,
+  "lean_toolchain": "leanprover/lean4:v4.35.0",
+  "mechanism": "toolchain",
+  "olean_manifest": {
+    "captured": "build",
+    "files": 3,
+    "lake_manifest_sha256": "62ae9ff5d402bd11322dda656beab0695f56793ae4814740f7568799175346c8",
+    "lean_toolchain": "leanprover/lean4:v4.35.0",
+    "schema": "olean-manifest/1",
+    "sha256": "24d8d3a65c3cab429f6ffe15050599c8459c9f9514471c86fa62ad1d940fb949"
+  },
+  "result": "pass",
+  "resumed_slots": 1,
+  "schema": "comparator-receipt/2",
+  "stack_limit": {
+    "hard_kb": "unlimited",
+    "soft_kb": 65536,
+    "source": "COMPARATOR_RECEIPT_STACK"
+  },
+  "stages": [
+    {
+      "exit": 0,
+      "stage": "checkout",
+      "status": "prepared",
+      "wall_s": 5.851
+    },
+    {
+      "exit": 0,
+      "stage": "cache-get",
+      "status": "prepared",
+      "wall_s": 5.415
+    },
+    {
+      "exit": 0,
+      "stage": "build",
+      "status": "prepared",
+      "wall_s": 3.465
+    },
+    {
+      "exit": 0,
+      "stage": "comparator",
+      "status": "ok",
+      "wall_s": 0.099
+    }
+  ],
+  "toolchain_resolution": {
+    "lake": "<elan>/bin/lake",
+    "source": "elan",
+    "version": "Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)"
+  },
+  "tools": {
+    "con-ron_sha256": "60f4ca9fb9436c323789fa49aae33af6dcd1b9b54b43a66b461779ce79fd8eec",
+    "lake_sha256": "8ba83c98f76562d03b8dbc33f1057151ba6cbb121679dde76b2260ccc90495e1",
+    "lean_toolchain": "leanprover/lean4:v4.35.0",
+    "leanchecker_sha256": "12c38901cdbfab178f1bf6145dd30012e9a3b2c11ca695292a5884fa3cbaddb6",
+    "leanexport_sha256": "f6a6483d518a11b323c28b9bac176d2220df0e9fc3230833815db9586669c074",
+    "nanoda_bin_sha256": "cbf13950fc4a48f635a0beceeb5ed32dd82568b870cfd081b6391c1f2cf02ba5"
+  },
+  "unit_size": 1
+}
