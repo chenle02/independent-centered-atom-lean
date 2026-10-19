@@ -55,15 +55,15 @@ Developed and verified with [lean-pkg](https://github.com/lean-pkg/lean-pkg) ([d
 
 Conditional centering and a second-moment identity for bounded coefficients multiplying independent centered noise.
 
-- Main results: 1; verified: 0 of 1.
+- Main results: 1; verified: 1 of 1.
 
 ## Main results
 
 ### Bounded coefficient times independent centered noise
 
-**Not yet verified.** lean-pkg's record of the checks says: open. Until it says verified, read the Lean statement below as work in progress.
+**Verified.** Lean accepts the proof, and lean-pkg's record shows every check of this result passed (the build, and the statement comparison).
 
-**In Lean.** `ProbabilityCore.IndependentCenteredAtom.bounded_mul_independent_centered` in `ProbabilityCore/IndependentCenteredAtom.lean`.
+**In Lean.** `ProbabilityCore.IndependentCenteredAtom.bounded_mul_independent_centered` in [ProbabilityCore/Challenge.lean](https://github.com/chenle02/independent-centered-atom-lean/blob/0fdcdc039eebe632581e1d92cb6068d989cbc9a0/ProbabilityCore/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
 ```lean
 theorem bounded_mul_independent_centered
@@ -80,21 +80,31 @@ theorem bounded_mul_independent_centered
     (∫ ω, (ξ ω * Z ω)^2 ∂μ) = V * (∫ ω, (ξ ω)^2 ∂μ)
 ```
 
+**Axioms.** At most `Classical.choice`, `Quot.sound`, `propext` (what the build check records for the whole package).
+
 ## What the checks establish
 
-- **No build check is recorded yet**: nothing on this page is backed by one.
-- **No statement comparison is recorded yet**: no Lean statement here has been compared with its proof by a second checker.
+- **Every proof is checked by Lean.** The package builds; no `sorry` (an unfinished proof) remains; the only axioms used are `Classical.choice`, `Quot.sound`, `propext` (allowed: `propext`, `Quot.sound`, `Classical.choice`).
+- **The statements shown are the ones proved.** For 1 statement(s), a second checker (comparator) confirmed that the proof proves exactly the statement shown, with only the permitted axioms, and independent Lean kernels replayed the proof.
 - **Not checked by any tool:** that a title or note describes its Lean statement. A definition listed under *Definitions checked by a person* is compared by name and type only.
 
 The full account of what each check covers and what it takes on trust is lean-pkg's [trust model](https://github.com/lean-pkg/lean-pkg/blob/main/docs/trust-model.md).
 
 ## How this was checked
 
-- lean-pkg's claims ledger: **open**, not every required claim is closed by the recorded receipts; 0 of 1 required claim(s) verified (`sha256:2c56800e4f877492…`).
+- lean-pkg's claims ledger: **ready**, every required claim is closed by the recorded receipts; 1 of 1 required claim(s) verified (`sha256:71c1cd7ca95e9f47…`).
+- Build check (`lean-pkg gate`) at commit `0fdcdc039eeb`: `sorry` count 0; axioms used: `Classical.choice`, `Quot.sound`, `propext`.
+- Axioms of every claim: read from the built environment (Lean's `collectAxioms`) for all 1 claim(s) in `claims.yaml`, not only the theorems the build prints; none uses an axiom beyond `propext`, `Quot.sound` and `Classical.choice`.
+- Statement comparison (comparator) at commit `0fdcdc039eeb`: 1 configuration(s), 1 theorem(s) compared (each Challenge statement against its Solution proof); permitted axioms: `Classical.choice`, `Quot.sound`, `propext`; definitions compared by name only: none.
 
 ### Receipts
 
-No receipt is committed under `.lean-receipts/`.
+| Receipt | Check | Commit | Date | Job | SHA-256 |
+|---|---|---|---|---|---|
+| `.lean-receipts/0fdcdc039eeb-comparator.json` (used here) | statement comparison | `0fdcdc039eeb` | 2026-10-19 | — | `299f79e2dd64f62a1f88746a502a6b5bc317d677899d3f8c3aa6113d4443559c` |
+| `.lean-receipts/0fdcdc039eeb-systemd-user-independent-centered-atom-lower001.service-17ad8834031e464eb7e50bb963f1c6c4-h-24e00fc5da6c.json` (used here) | build | `0fdcdc039eeb` | 2026-10-19 | — | `46930011ff8fed7fd34285d4c46ee440a9e1a1c165c5b63326c4d1de14a4f905` |
+
+*(used here)*: the receipt the lean-pkg registry holds for this package, which the lines above read. SHA-256 is of the file as committed.
 
 ### Reproduce
 
@@ -104,9 +114,12 @@ No receipt is committed under `.lean-receipts/`.
 ```bash
 git clone https://github.com/chenle02/independent-centered-atom-lean
 cd independent-centered-atom-lean
+git checkout 0fdcdc039eebe632581e1d92cb6068d989cbc9a0   # the commit the build check binds
 lake exe cache get
 lake build
 ```
+
+Expected: `#print axioms` on any declaration above reports a subset of {`Classical.choice`, `Quot.sound`, `propext`} (the union the build check records); `sorryAx` never appears.
 
 ## Citation
 
