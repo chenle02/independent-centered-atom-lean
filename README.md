@@ -2,7 +2,7 @@
 
 # Independent Centered Atom
 
-A bounded past-measurable coefficient times independent, centered, square-integrable noise has conditional mean zero given the past, and its second moment factors: $\mathbb{E}[(\xi Z)^2]=\mathbb{E}[Z^2]\,\mathbb{E}[\xi^2]$. Formalized in Lean 4 with Mathlib.
+A bounded past-measurable coefficient times independent, centered, square-integrable noise has conditional mean zero given the past, and its second moment factors: $`\mathbb{E}[(\xi Z)^2]=\mathbb{E}[Z^2]\,\mathbb{E}[\xi^2]`$. Formalized in Lean 4 with Mathlib.
 
 [![Lean CI](https://github.com/chenle02/independent-centered-atom-lean/actions/workflows/ci.yml/badge.svg)](https://github.com/chenle02/independent-centered-atom-lean/actions/workflows/ci.yml)
 [![Lean](https://img.shields.io/badge/Lean-v4.35.0-153e63)](lean-toolchain)
@@ -19,12 +19,12 @@ A bounded past-measurable coefficient times independent, centered, square-integr
 One theorem, `ProbabilityCore.IndependentCenteredAtom.bounded_mul_independent_centered`.
 Let $(\Omega,\mathcal{F}_0,\mu)$ be a probability space, and let $\mathcal{N},\mathcal{F}\subseteq\mathcal{F}_0$
 be independent sub-$\sigma$-algebras (the noise and the past). Let $Z$ be $\mathcal{N}$-measurable with
-$Z\in L^2(\mu)$, $\int Z\,d\mu=0$ and $\int Z^2\,d\mu=V$, and let $\xi$ be $\mathcal{F}$-measurable with
+$Z\in L^2(\mu)$, $`\int Z\,d\mu=0`$ and $`\int Z^2\,d\mu=V`$, and let $\xi$ be $\mathcal{F}$-measurable with
 $|\xi|\le C$ everywhere. Then
 
 - $\xi Z$ and $(\xi Z)^2$ are integrable;
 - $\mathbb{E}[\xi Z\mid\mathcal{F}]=0$ almost everywhere;
-- $\int(\xi Z)^2\,d\mu=V\int\xi^2\,d\mu$.
+- $`\int(\xi Z)^2\,d\mu=V\int\xi^2\,d\mu`$.
 
 Every hypothesis above appears in the Lean statement. The [verification page](docs/verification.md)
 shows the Lean statement beside this one; the same page is rendered [below](#verification-at-a-glance).
