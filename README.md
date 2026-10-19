@@ -1,22 +1,47 @@
-# Independent Centered Atom Lean
+<div align="center">
 
-A small Lean 4 / Mathlib library for a standard probability identity.
+# Independent Centered Atom
 
-Given independent noise and past sigma-fields, a centered square-integrable real
-noise variable, and a bounded past-measurable real coefficient, the theorem proves:
+A bounded past-measurable coefficient times independent, centered, square-integrable noise has conditional mean zero given the past, and its second moment factors: $\mathbb{E}[(\xi Z)^2]=\mathbb{E}[Z^2]\,\mathbb{E}[\xi^2]$. Formalized in Lean 4 with Mathlib.
 
-- integrability of their product and its square;
-- conditional mean zero given the past;
-- a second moment equal to the noise second moment times the coefficient second moment.
+[![Lean CI](https://github.com/chenle02/independent-centered-atom-lean/actions/workflows/ci.yml/badge.svg)](https://github.com/chenle02/independent-centered-atom-lean/actions/workflows/ci.yml)
+[![Lean](https://img.shields.io/badge/Lean-v4.35.0-153e63)](lean-toolchain)
+[![Mathlib](https://img.shields.io/badge/Mathlib-56a0058-153e63)](https://github.com/leanprover-community/mathlib4/tree/56a005855ea17e0b0958f73ec801ae140b0a1679)
+[![Release](https://img.shields.io/badge/release-v0.1.0-153e63)](https://github.com/chenle02/independent-centered-atom-lean/releases/tag/v0.1.0)
+[![License](https://img.shields.io/badge/license-Apache--2.0-153e63)](LICENSE)
 
-All hypotheses appear in the Lean statement. This package does not construct a
-Poisson random measure or a general stochastic integral, and claims no new
-mathematical result.
+[What is proved](#what-is-proved) · [Verification page](docs/verification.md) · [Build](#build-and-verify) · [Cite](#citation)
 
-## Use
+</div>
 
-Pinned to Lean 4.35.0 and Mathlib commit
-`56a005855ea17e0b0958f73ec801ae140b0a1679`.
+## What is proved
+
+One theorem, `ProbabilityCore.IndependentCenteredAtom.bounded_mul_independent_centered`.
+Let $(\Omega,\mathcal{F}_0,\mu)$ be a probability space, and let $\mathcal{N},\mathcal{F}\subseteq\mathcal{F}_0$
+be independent sub-$\sigma$-algebras (the noise and the past). Let $Z$ be $\mathcal{N}$-measurable with
+$Z\in L^2(\mu)$, $\int Z\,d\mu=0$ and $\int Z^2\,d\mu=V$, and let $\xi$ be $\mathcal{F}$-measurable with
+$|\xi|\le C$ everywhere. Then
+
+- $\xi Z$ and $(\xi Z)^2$ are integrable;
+- $\mathbb{E}[\xi Z\mid\mathcal{F}]=0$ almost everywhere;
+- $\int(\xi Z)^2\,d\mu=V\int\xi^2\,d\mu$.
+
+Every hypothesis above appears in the Lean statement. The [verification page](docs/verification.md)
+shows the Lean statement beside this one; the same page is rendered [below](#verification-at-a-glance).
+
+> [!IMPORTANT]
+> **Not proved here.** The package does not construct a Poisson random measure, a stochastic integral or
+> any particle model, and it claims no new mathematics: this is a standard identity, packaged for reuse.
+
+## Paper and references
+
+Standalone library; there is no accompanying paper. The identity is the elementary step used when
+computing second moments of stochastic sums against independent centered noise.
+
+## Build and verify
+
+Toolchain Lean `v4.35.0` ([`lean-toolchain`](lean-toolchain)); Mathlib
+`56a005855ea17e0b0958f73ec801ae140b0a1679` ([`lake-manifest.json`](lake-manifest.json)).
 
 ```sh
 git clone https://github.com/chenle02/independent-centered-atom-lean.git
@@ -25,26 +50,40 @@ lake exe cache get
 lake build
 ```
 
-Import `ProbabilityCore.IndependentCenteredAtom`; the theorem is
-`ProbabilityCore.IndependentCenteredAtom.bounded_mul_independent_centered`.
-The trusted comparator statement is in `ProbabilityCore/Challenge.lean`; its
-intentional `sorry` is excluded from the production library and lower-tier
-build. The comparator checks the proved theorem against that statement.
+To use it from another Lake project:
 
-## Verification
+```toml
+[[require]]
+name = "independent-centered-atom-lean"
+git = "https://github.com/chenle02/independent-centered-atom-lean.git"
+rev = "v0.1.0"
+```
 
-The verification section below records source-bound build, axiom and comparator
-results as receipts become available. Compilation, comparator agreement and axiom checks apply
-to the stated Lean theorem; they do not certify a stochastic model or manuscript.
+then `import ProbabilityCore.IndependentCenteredAtom`. The trusted comparator statement is
+[`ProbabilityCore/Challenge.lean`](ProbabilityCore/Challenge.lean); its `sorry` is intentional and the file is
+not part of the default build target.
 
-## License and authorship
+## Trust and axioms
 
-Apache-2.0. Copyright 2026 Le Chen. Developed with OpenAI Codex assistance;
-AI assistance is not human mathematical review. Mathlib retains its own notices.
+The build check recorded `sorry` count 0 for the library modules and the axioms `propext`,
+`Classical.choice` and `Quot.sound` only. The comparator confirmed that the proof proves exactly the
+statement in `Challenge.lean`, and independent kernels replayed it. Details and receipts:
+[What the checks establish](#what-the-checks-establish).
 
-## Acknowledgments
+## Built with lean-pkg
 
-Developed and verified with [lean-pkg](https://github.com/lean-pkg/lean-pkg) ([doi:10.5281/zenodo.23272098](https://doi.org/10.5281/zenodo.23272098)).
+Developed and verified with [lean-pkg](https://github.com/lean-pkg/lean-pkg)
+([doi:10.5281/zenodo.23272098](https://doi.org/10.5281/zenodo.23272098)). The receipts under
+[`.lean-receipts/`](.lean-receipts/) bind the checks to a source commit, and the verification section below
+is rendered by `lean-pkg page` from [`coverage.yaml`](coverage.yaml), [`claims.yaml`](claims.yaml) and those
+receipts; `lean-pkg page independent-centered-atom-lean --check` confirms it is current.
+
+## Authors and AI disclosure
+
+Le Chen, Associate Professor, Department of Mathematics and Statistics, Auburn University.
+Developed with OpenAI Codex assistance; Lean compilation and an independent kernel comparison check the
+stated theorem only. AI assistance is not human mathematical review. Mathlib retains its own notices
+(see [NOTICE](NOTICE)).
 
 <!-- lean-pkg:page:begin -->
 <!-- Generated by `lean-pkg page independent-centered-atom-lean` from coverage.yaml, claims.yaml, the claims ledger and the receipts committed under .lean-receipts/. Do not edit between the markers: change the data and run `lean-pkg page independent-centered-atom-lean --write`. -->
@@ -62,6 +101,19 @@ Conditional centering and a second-moment identity for bounded coefficients mult
 ### Bounded coefficient times independent centered noise
 
 **Verified.** Lean accepts the proof, and lean-pkg's record shows every check of this result passed (the build, and the statement comparison).
+
+**In words.**
+
+```latex
+Let $(\Omega,\mathcal{F}_0,\mu)$ be a probability space and let
+$\mathcal{N},\mathcal{F}\subseteq\mathcal{F}_0$ be independent sub-$\sigma$-algebras.
+Let $Z$ be $\mathcal{N}$-measurable with $Z\in L^2(\mu)$, $\int Z\,d\mu=0$ and
+$\int Z^2\,d\mu=V$, and let $\xi$ be $\mathcal{F}$-measurable with
+$|\xi(\omega)|\le C$ for every $\omega$ (some $C\ge 0$). Then $\xi Z$ and $(\xi Z)^2$
+are $\mu$-integrable,
+$\mathbb{E}_\mu[\xi Z\mid\mathcal{F}]=0$ $\mu$-a.e., and
+$\int(\xi Z)^2\,d\mu=V\int\xi^2\,d\mu$.
+```
 
 **In Lean.** `ProbabilityCore.IndependentCenteredAtom.bounded_mul_independent_centered` in [ProbabilityCore/Challenge.lean](https://github.com/chenle02/independent-centered-atom-lean/blob/0fdcdc039eebe632581e1d92cb6068d989cbc9a0/ProbabilityCore/Challenge.lean): the statement the proof was checked against (the proof is in a separate file, and a second checker confirmed it proves exactly this).
 
