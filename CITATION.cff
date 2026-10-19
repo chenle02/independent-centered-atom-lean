@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "independent-centered-atom-lean"
+authors:
+  - name: "Le Chen"
+version: "0.1.0"
+date-released: "2026-10-19"
+repository-code: "https://github.com/chenle02/independent-centered-atom-lean"
+license: "Apache-2.0"

@@ -1,0 +1,6 @@
+Independent Centered Atom Lean
+Copyright 2026 Le Chen
+
+Original package code and documentation are licensed under Apache-2.0.
+Mathlib is a separate dependency under its own Apache-2.0 license and notices.
+This package proves a standard probability identity; no mathematical novelty is claimed.

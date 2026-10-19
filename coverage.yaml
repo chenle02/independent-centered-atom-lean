@@ -1,0 +1,7 @@
+schema: coverage/1
+package: independent-centered-atom-lean
+kind: library
+summary: "Conditional centering and a second-moment identity for bounded coefficients multiplying independent centered noise."
+rows:
+  - title: "Bounded coefficient times independent centered noise"
+    claims: [independent-centered-atom-lean/bounded-independent-centered-product]

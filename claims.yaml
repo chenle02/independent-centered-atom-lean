@@ -1,0 +1,11 @@
+schema: claims/1
+package: independent-centered-atom-lean
+claims:
+- id: independent-centered-atom-lean/bounded-independent-centered-product
+  decl: ProbabilityCore.IndependentCenteredAtom.bounded_mul_independent_centered
+  kind: theorem
+  summary: A bounded past-measurable coefficient times independent centered square-integrable noise has conditional mean zero and a factored second moment.
+  keywords: [probability, independence, conditional-expectation, second-moment]
+  file: ProbabilityCore/IndependentCenteredAtom.lean
+  status: reusable
+  judged_as: ProbabilityCore.IndependentCenteredAtom.bounded_mul_independent_centered

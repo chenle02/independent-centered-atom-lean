@@ -1,0 +1,2 @@
+import ProbabilityCore.IndependentCenteredAtom
+#print axioms ProbabilityCore.IndependentCenteredAtom.bounded_mul_independent_centered

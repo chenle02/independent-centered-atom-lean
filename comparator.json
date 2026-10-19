@@ -1,0 +1,14 @@
+{
+  "challenge_module": "ProbabilityCore.Challenge",
+  "solution_module": "ProbabilityCore.IndependentCenteredAtom",
+  "theorem_names": [
+    "ProbabilityCore.IndependentCenteredAtom.bounded_mul_independent_centered"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}
