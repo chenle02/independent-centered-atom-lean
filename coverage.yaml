@@ -5,3 +5,12 @@ summary: "Conditional centering and a second-moment identity for bounded coeffic
 rows:
   - title: "Bounded coefficient times independent centered noise"
     claims: [independent-centered-atom-lean/bounded-independent-centered-product]
+    statement: |
+      Let $(\Omega,\mathcal{F}_0,\mu)$ be a probability space and let
+      $\mathcal{N},\mathcal{F}\subseteq\mathcal{F}_0$ be independent sub-$\sigma$-algebras.
+      Let $Z$ be $\mathcal{N}$-measurable with $Z\in L^2(\mu)$, $\int Z\,d\mu=0$ and
+      $\int Z^2\,d\mu=V$, and let $\xi$ be $\mathcal{F}$-measurable with
+      $|\xi(\omega)|\le C$ for every $\omega$ (some $C\ge 0$). Then $\xi Z$ and $(\xi Z)^2$
+      are $\mu$-integrable,
+      $\mathbb{E}_\mu[\xi Z\mid\mathcal{F}]=0$ $\mu$-a.e., and
+      $\int(\xi Z)^2\,d\mu=V\int\xi^2\,d\mu$.
