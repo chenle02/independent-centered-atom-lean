@@ -10,7 +10,7 @@ A bounded past-measurable coefficient times independent, centered, square-integr
 [![Release](https://img.shields.io/badge/release-v0.1.0-153e63)](https://github.com/chenle02/independent-centered-atom-lean/releases/tag/v0.1.0)
 [![License](https://img.shields.io/badge/license-Apache--2.0-153e63)](LICENSE)
 
-[What is proved](#what-is-proved) · [Verification page](docs/verification.md) · [Build](#build-and-verify) · [Cite](#citation)
+[What is proved](#what-is-proved) · [Statement guide](docs/what-is-proved.md) · [Docs site](https://chenle02.github.io/independent-centered-atom-lean/) · [Verification page](docs/verification.md) · [Build](#build-and-verify) · [Cite](#citation)
 
 </div>
 

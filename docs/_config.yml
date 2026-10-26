@@ -1,0 +1,12 @@
+title: "Independent Centered Atom"
+description: "A bounded past-measurable coefficient times independent centered noise: conditional mean zero and a factored second moment, formalized in Lean 4 with Mathlib."
+url: https://chenle02.github.io
+baseurl: /independent-centered-atom-lean
+markdown: kramdown
+theme: null
+plugins: []
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
